@@ -6,7 +6,7 @@
   "scripts": {
     "deps": "dependency-check . && dependency-check . --extra --no-dev",
     "test": "standard && npm run deps",
-    "start": "bankai start src/index.js --debug",
+    "start": "bankai start src/index.js --debug --uglify false",
     "start:db": "json-server db.json"
   },
   "keywords": [],
