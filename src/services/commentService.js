@@ -1,6 +1,6 @@
 module.exports = function commentService (state, emitter) {
   state.comments = {
-    items: [],
+    items: {},
     isFetching: true
   }
 
@@ -9,14 +9,15 @@ module.exports = function commentService (state, emitter) {
     emitter.on('post:show', onPostShow)
   })
 
-  function onCommentsFetched (comments) {
-    state.comments.items = comments
+  function onCommentsFetched (data) {
+    state.comments.items[data.postId] = data.body
     state.comments.isFetching = false
     emitter.emit('render')
   }
 
   function onPostShow (postId) {
-    // TODO Load from state if available
-    emitter.emit('comments:fetch', postId)
+    if (state.comments.items.hasOwnProperty(postId) === false) {
+      emitter.emit('comments:fetch', postId)
+    }
   }
 }

@@ -30,8 +30,6 @@ module.exports = function PostsPage (state, emit) {
   function PostItem (post) {
     return html`<li onclick=${onClick}>${post.title}</li>`
     function onClick () {
-      // TODO Should views be the ones emitting pushState or should I emit
-      // something like post:show instead and listen fo
       emit('post:show', post.id)
     }
   }

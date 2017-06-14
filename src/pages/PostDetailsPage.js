@@ -28,12 +28,19 @@ module.exports = function PostsPage (state, emit) {
     if (state.comments.isFetching === true) {
       return html`<p>Fetching comments...</p>`
     }
-    if (state.comments.items.length === 0) {
+
+    var postId = state.params.post
+    var comments = state.comments.items.hasOwnProperty(postId)
+      ? state.comments.items[postId]
+      : []
+
+    if (comments === 0) {
       return html`<p>No available comments</p>`
     }
+
     return html`
       <ul>
-        ${state.comments.items.map(CommentItem)}
+        ${comments.map(CommentItem)}
       </ul>
     `
   }

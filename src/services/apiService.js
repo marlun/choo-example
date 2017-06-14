@@ -21,7 +21,7 @@ module.exports = function apiService (state, emitter) {
     }
     xhr.get(options, function onApiResponse (err, res, body) {
       if (err) emitter.emit('posts:fetch:error', err)
-      emitter.emit('comments:fetched', body)
+      emitter.emit('comments:fetched', { body: body, postId: postId })
     })
   })
 }
