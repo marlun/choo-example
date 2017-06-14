@@ -25,6 +25,9 @@ module.exports = function PostsPage (state, emit) {
   }
 
   function CommentList () {
+    if (state.comments.isFetching === true) {
+      return html`<p>Fetching comments...</p>`
+    }
     if (state.comments.items.length === 0) {
       return html`<p>No available comments</p>`
     }
