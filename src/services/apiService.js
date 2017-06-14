@@ -17,7 +17,7 @@ module.exports = function apiService (state, emitter) {
     state.comments.isFetching = true
     var options = {
       json: true,
-      url: `http://localhost:3000/comments?id=${postId}`
+      url: `http://localhost:3000/comments?postId=${postId}`
     }
     xhr.get(options, function onApiResponse (err, res, body) {
       if (err) emitter.emit('posts:fetch:error', err)
