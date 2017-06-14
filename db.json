@@ -1,0 +1,41 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "crazy blog title",
+      "author": "martin"
+    },
+    {
+      "id": 2,
+      "title": "even crazier blog title",
+      "author": "martin"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    },
+    {
+      "id": 2,
+      "body": "some other comment",
+      "postId": 1
+    },
+    {
+      "id": 3,
+      "body": "some crazy comment",
+      "postId": 1
+    },
+    {
+      "id": 4,
+      "body": "boring comment",
+      "postId": 2
+    },
+    {
+      "id": 5,
+      "body": "even more boring comment",
+      "postId": 2
+    }
+  ]
+}

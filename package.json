@@ -1,0 +1,26 @@
+{
+  "name": "choo-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "deps": "dependency-check . && dependency-check . --extra --no-dev",
+    "test": "standard && npm run deps",
+    "start": "bankai start src/index.js --debug --uglify false"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bel": "^5.0.0",
+    "choo": "^5.6.2",
+    "choo-log": "^6.1.2",
+    "on-load": "^3.2.0",
+    "xhr": "^2.4.0"
+  },
+  "devDependencies": {
+    "bankai": "^7.6.2",
+    "dependency-check": "^2.8.0",
+    "standard": "^10.0.2"
+  }
+}
