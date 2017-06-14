@@ -15,8 +15,7 @@ module.exports = function postService (state, emitter) {
     emitter.emit('render')
   }
 
-  function onPostShow (postId) {
-    emitter.emit('comments:fetch', postId)
-    emitter.emit('pushState', `posts/${postId}`)
+  function onPostShow (postid) {
+    emitter.emit('pushState', `posts/${postid}`)
   }
 }
